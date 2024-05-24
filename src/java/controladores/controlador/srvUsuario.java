@@ -11,6 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import servicios.conexiones.DaoUsuario;
+import servicios.conexiones.usuario;
 
 
 @WebServlet(name ="srvUsuario",urlPatterns={"/srvUsuario"})
@@ -35,7 +38,12 @@ public class srvUsuario extends HttpServlet {
               }
           }
         }catch(Exception e){
-        
+            try {
+                this.getServletConfig().getServletContext().getRequestDispatcher("/footer.jsp").forward(request, responde);
+            } catch (Exception ex) {
+                System.out.println("Error"+ex.getMessage());
+                
+            }
         }
     }
 
@@ -78,12 +86,42 @@ public class srvUsuario extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void verificar(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void verificar(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session;
+        DaoUsuario dao;
+        usuario usuario;
+        usuario= this.obtenerUsuario(request);
+        dao = new DaoUsuario();
+        usuario=dao.identificar(usuario);
+        if (usuario != null && usuario.getCargo().getNombreCargo().equals("TRABAJADOR")) {
+            session=request.getSession();
+            session.setAttribute("usuario", usuario);
+            request.setAttribute("msje", "Bienvenido");
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/footer.jsp").forward(request, response);
+        } else if (usuario!= null && usuario.getCargo().getNombreCargo().equals("USUARIO"))  {
+         session=request.getSession();
+            session.setAttribute("usuario", usuario);
+            request.setAttribute("msje", "Bienvenido");
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);
+        }else{
+        request.setAttribute("msje","Credenciales Incorrectas ");
+            request.getRequestDispatcher("IniciarSesion.jsp");
+        }
+    
     }
 
-    private void cerarSesion(HttpServletRequest request, HttpServletResponse responde) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void cerarSesion(HttpServletRequest request, HttpServletResponse responde) throws Exception {
+       HttpSession session = request.getSession();
+       session.setAttribute("usuario",null);
+       session.invalidate();
+       responde.sendRedirect("IniciarSesion.jsp");
+    }
+
+    private usuario obtenerUsuario(HttpServletRequest request) {
+    usuario u =new usuario();
+    u.setNombres(request.getParameter("username"));
+    u.setContraseña(request.getParameter("password"));
+    return u;
     }
 
 }
