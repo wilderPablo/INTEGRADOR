@@ -18,7 +18,7 @@ public class ConectaDB {
         String database = "megamatrix";
         String port = "3306";
         
-        String url = "jdbc:mysql://localhost:3306/megamatrixs?useTimeZone=true&serverTimezone=UTC&autoReconnect=true";
+        String url = "jdbc:mysql://localhost:3306/megamatrix?useTimeZone=true&serverTimezone=UTC&autoReconnect=true";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

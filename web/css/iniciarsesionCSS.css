@@ -1,90 +1,98 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-        html,body{
-            background-image: url('../img/megatriximagen.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-            font-family: 'Numans', sans-serif;
-            display: flex; /* Flex container for centering */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-        }
+html, body {
+    background-image: url('../img/megatriximagen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Ensure the body takes full viewport height */
+}
 
-        .container{
-            /* Ajuste de posición */
-            position: absolute;
-            top: 50%; /* Posición vertical al 50% del viewport */
-            transform: translateY(50%); /* Centra verticalmente */
-            /* Resto de estilos */
-            align-content: center;
-        }
+.main-container {
+    display: flex; /* Flex container for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100%; /* Ensure it takes full height of viewport */
+}
 
-        .card{
-            height: auto; /* Auto height to fit content */
-            width: 400px;
-            background-color: rgba(0,0,0,0.5) !important;
-        }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensure the container positions elements relative to itself */
+    /* Optional: Add padding or other styles as needed */
+    margin-top: 185px; /* Adjust margin if necessary */
+}
 
-        .social_icon span{
-            font-size: 60px;
-            margin-left: 10px;
-            color: #FFC312;
-        }
+.card {
+    height: auto; /* Auto height to fit content */
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
 
-        .social_icon span:hover{
-            color: white;
-            cursor: pointer;
-        }
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
 
-        .card-header h3{
-            color: white;
-        }
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
 
-        .social_icon{
-            position: absolute;
-            right: 20px;
-            top: -45px;
-        }
+.card-header h3 {
+    color: white;
+}
 
-        .input-group-prepend span{
-            width: 50px;
-            background-color: #FFC312;
-            color: black;
-            border:0 !important;
-        }
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
 
-        input:focus{
-            outline: 0 0 0 0  !important;
-            box-shadow: 0 0 0 0 !important;
-        }
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
 
-        .remember{
-            color: maroon; /* Cambia el color del texto a gris */
-        }
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
 
-        .remember input {
-            width: 20px;
-            height: 20px;
-            margin-left: 15px;
-            margin-right: 5px;
-        }
+.remember {
+    color: maroon; /* Cambia el color del texto a maroon */
+    font-weight:bold;
+}
 
-        .login_btn{
-            color: black;
-            background-color: #FFC312;
-            width: 100px;
-        }
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
 
-        .login_btn:hover{
-            color: black;
-            background-color: white;
-        }
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
 
-        .links{
-            color: white;
-        }
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
 
-        .links a{
-            margin-left: 4px;
-        }
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
