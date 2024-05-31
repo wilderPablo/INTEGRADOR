@@ -5,6 +5,7 @@
     background-color: #0E0E0E;
     background-size: cover;
     background-position: center;
+    background-attachment: no-repeat;
     min-height: 250px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
