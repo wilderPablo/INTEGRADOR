@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">    
+    <servlet>
+        <servlet-name>SVCelulares</servlet-name>
+        <servlet-class>controladores.SVCelulares</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SVIos</servlet-name>
+        <servlet-class>controladores.SVIos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SVAndroid</servlet-name>
+        <servlet-class>controladores.SVAndroid</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SVPreguntasFrecuentes</servlet-name>
+        <servlet-class>controladores.SVPreguntasFrecuentes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SVCelulares</servlet-name>
+        <url-pattern>/SVCelulares</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SVIos</servlet-name>
+        <url-pattern>/SVIos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SVAndroid</servlet-name>
+        <url-pattern>/SVAndroid</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SVPreguntasFrecuentes</servlet-name>
+        <url-pattern>/SVPreguntasFrecuentes</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
