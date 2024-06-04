@@ -1,4 +1,3 @@
-
 package modelo.dto;
 
 /**
@@ -6,6 +5,7 @@ package modelo.dto;
  * @author ander
  */
 public class PlacasMadreDTO {
+
     private int idProducto;
     private String marca;
     private String chipset;
@@ -14,6 +14,7 @@ public class PlacasMadreDTO {
     private String tipoDeMemoria;
     private int ranurasDeMemoriaRAM;
     private String nombre;
+    private double precio;
     private String imagen;
 
     // Getters y Setters
@@ -81,6 +82,14 @@ public class PlacasMadreDTO {
         this.nombre = nombre;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public String getImagen() {
         return imagen;
     }
@@ -89,4 +98,3 @@ public class PlacasMadreDTO {
         this.imagen = imagen;
     }
 }
-
