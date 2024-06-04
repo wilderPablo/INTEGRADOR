@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -13,15 +13,12 @@
     height: 80px;
     z-index: 3;
     position: fixed;
-    top:0;
+    top: 0;
 }
 
-
-/*Estilo para el logo*/
 .logoMenu {
     position: absolute;
     margin: 5px 50px;
-
 }
 
 .logoMenu img {
@@ -30,21 +27,21 @@
     height: 70px;
 }
 
-.carrito{
+.carrito {
     display: block;
     float: right;
     margin-right: 50px;
     color: black;
 }
 
-#carritologo{
+#carritologo {
     font-size: 30px;
     line-height: 80px;
 }
 
-#cuenta-carrito{
+#cuenta-carrito {
     font-size: 15px;
-    background-color: #85C1E9 ;
+    background-color: #85C1E9;
     border-radius: 100%;
     display: inline-block;
     margin: auto;
@@ -55,8 +52,6 @@
     line-height: 20px;
 }
 
-
-/*Estilo para la navegacion*/
 .navegador {
     line-height: 80px;
 }
@@ -64,18 +59,18 @@
 .menu {
     display: flex;
     float: right;
+    position: relative;
 }
 
 .menu a {
     color: black;
-    display: inline-block; /* Cambiamos de bloque a en línea para ajustar el tamaño al contenido */
-    padding: 0 10px; /* Añadimos espacio alrededor del texto */
+    display: inline-block;
+    padding: 0 10px;
     text-align: center;
-    text-decoration: none; /* Eliminamos la decoración predeterminada */
+    text-decoration: none;
 }
 
-
-.fa-solid{
+.fa-solid {
     right: 20px;
 }
 
@@ -83,18 +78,40 @@
     background-color: #fff;
     box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.2);
     display: none;
+    position: absolute;
+    top: 80px; /* Ajustar según la altura de tu menú */
     border-radius: 5px;
+    left: 0;
+    z-index: 1000;
+    min-width: 200px; /* Ancho mínimo para los submenús */
 }
 
-/*Estilo para los cuadros de Ingresar y Registrar*/
+.menu li {
+    position: relative;
+}
+
+.menu li:hover > .submenu {
+    display: block;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+    margin-left: 1px;
+    min-width: 200px; /* Ancho mínimo para los sub-submenús */
+}
+
 .login {
     float: right;
-    padding:0px 20px;
+    padding: 0px 20px;
     line-height: 80px;
 }
 
-
-.login button{
+.login button {
     font-size: 16px;
     height: 20px;
     width: 110px;
@@ -102,61 +119,50 @@
     border: 0;
 }
 
-/*Estilos para el Usuario logeado*/
-.usuario{
+.usuario {
     text-align: center;
     float: right;
     line-height: 80px;
     width: 150px;
 }
 
-.usuario a{
+.usuario a {
     color: gray;
-    font-weight: 600; /*Grosor de la letra*/
+    font-weight: 600;
 }
 
-.usuario .menuUsuario{
+.usuario .menuUsuario {
     background-color: #fff;
     box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: none;
 }
 
-.usuario:hover .menuUsuario{
+.usuario:hover .menuUsuario {
     display: block;
-
 }
 
-
-/* Estilos al pasar el cursor sobre los elementos del menú */
 .menu a:hover {
-    background: #5499C7 ; /*Antes: coral*/
+    background: #5499C7;
     color: #fff;
     border-radius: 5px;
 }
 
 .menu button:hover {
-    background: #5499C7 ; /*Antes: coral*/
+    background: #5499C7;
     color: #fff;
     border-radius: 5px;
 }
 
-/* Mostrar submenú al pasar el cursor sobre un elemento del menú */
-.menu li:hover .submenu {
-    display: block;
-    border-radius: 5px;
-}
-
-
-.checkbtn{
+.checkbtn {
     display: none;
 }
 
-#check{
+#check {
     display: none;
 }
 
-@media (max-width:965px) {
+@media (max-width: 965px) {
     .logoMenu {
         margin-left: 30px;
     }
@@ -173,20 +179,20 @@
         line-height: 63px;
     }
 
-    .menu a{
+    .menu a {
         width: 100%;
         font-size: 18px;
         padding: 0px;
     }
 
-    .menu i{
+    .menu i {
         right: 20px;
         position: absolute;
         font-size: 20px;
         line-height: 63px;
     }
 
-    .menu .buttom{
+    .menu .buttom {
         width: 150px;
     }
 
@@ -196,7 +202,7 @@
         margin: auto;
     }
 
-    .checkbtn{
+    .checkbtn {
         display: block;
         float: right;
         line-height: 80px;
@@ -205,12 +211,12 @@
         cursor: pointer;
     }
 
-    .carrito{
+    .carrito {
         float: right;
         margin-right: 30px;
     }
 
-    #check:checked ~ nav .menu{
+    #check:checked ~ nav .menu {
         left: 0;
     }
 
@@ -219,7 +225,7 @@
     }
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
     .login {
         display: flex;
         flex-direction: column;
@@ -228,8 +234,10 @@
         justify-content: center;
         gap: 10px;
     }
-    .login button{
+
+    .login button {
         font-size: 16px;
         width: 100px;
     }
 }
+

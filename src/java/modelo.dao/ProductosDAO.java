@@ -41,7 +41,8 @@ public class ProductosDAO {
                 ai.setTipoDeMemoria(rs.getString(6));
                 ai.setRanurasDeMemoriaRAM(rs.getInt(7));
                 ai.setNombre(rs.getString(8));
-                ai.setImagen(rs.getString(9));
+                ai.setPrecio(rs.getDouble(9));
+                ai.setImagen(rs.getString(10));
                 plm.add(ai);
             }
         } catch (SQLException e) {
